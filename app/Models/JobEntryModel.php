@@ -13,6 +13,7 @@ class JobEntryModel extends Model
     protected $useSoftDeletes = false;
     protected $protectFields = true;
     protected $allowedFields = [
+        'user_id',
         'job_no',
         'design_no',
         'fabric',
@@ -26,7 +27,7 @@ class JobEntryModel extends Model
         'dupatta',
         'less',
         'date',
-        'pass_status',
+        'pass',
         'total_mtr',
         'pn_km',
         'set_copy',

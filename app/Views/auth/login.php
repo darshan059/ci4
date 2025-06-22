@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 
-<div class="row justify-content-center align-items-center min-vh-100">
+<div class="loginPage row justify-content-center align-items-center min-vh-100">
     <div class="col-12 col-sm-10 col-md-8 col-lg-5">
         <div class="card shadow rounded-4 p-4">
             <h2 class="text-center mb-4">Login</h2>
@@ -16,10 +16,8 @@
                     <label for="email">Email address</label>
                 </div>
 
-                <div class="form-floating mb-4">
-                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
-                    <label for="password">Password</label>
-                </div>
+                <?= view('components/password_input', ['name' => 'password', 'label' => 'Password', 'id' => 'password']) ?>
+
 
                 <button type="submit" class="btn btn-primary w-100 py-2 rounded-pill">Login</button>
 
@@ -30,5 +28,6 @@
         </div>
     </div>
 </div>
+
 
 <?= $this->endSection() ?>

@@ -38,8 +38,17 @@ class Auth extends BaseController
         $user = $userModel->where('email', $this->request->getPost('email'))->first();
 
         if ($user && password_verify($this->request->getPost('password'), $user['password'])) {
-            session()->set('user', $user['username']);
-            return redirect()->to('/dashboard');
+            // session()->set('user', $user['username']);
+            $sessionData = [
+                'user_id'  => $user['id'],
+                'user' => $user['username'],
+                'email'    => $user['email'],
+                'logged_in' => true
+            ];
+            session()->set($sessionData);
+
+            return redirect()->to('/job-entry')->with('message', 'Login successful');
+            return redirect()->to('/job-entry')->with('message', 'Login successful');
         } else {
             return redirect()->to('/login')->with('error', 'Invalid login');
         }

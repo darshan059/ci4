@@ -17,12 +17,9 @@
                     <label for="email">Email address</label>
                 </div>
 
-                <div class="form-floating mb-4">
-                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
-                    <label for="password">Password</label>
-                </div>
+                <?= view('components/password_input', ['name' => 'password', 'label' => 'Password', 'id' => 'password']) ?>
 
-                <button type="submit" class="btn btn-success w-100 py-2 rounded-pill">Register</button>
+                <button type="submit" class="btn btn-primary w-100 py-2 rounded-pill">Register</button>
 
                 <div class="text-center mt-3">
                     <small>Already have an account? <a href="/login">Login</a></small>
